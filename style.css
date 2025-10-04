@@ -1,0 +1,103 @@
+/* Плавный градиентный фон */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    opacity: 0;
+}
+
+p {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    opacity: 0;
+}
+
+/* Кнопка */
+button {
+    padding: 12px 25px;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 50px;
+    background-color: #ff6f91;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(255,111,145,0.7);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(255,111,145,1);
+}
+
+/* Сердечки */
+.heart {
+    position: absolute;
+    color: #ff6f91;
+    font-size: 20px;
+    animation: float 5s linear infinite, sway 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-900px) scale(1.5); opacity: 0; }
+}
+
+@keyframes sway {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(30px); }
+}
+
+/* Мерцающие блестки */
+.sparkle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkleAnim 2s linear infinite;
+}
+
+@keyframes sparkleAnim {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { opacity: 0.2; }
+    100% { transform: translateY(-800px) scale(0.5); opacity: 0; }
+}
+
+/* Эффект пульса для слов */
+.pulse {
+    display: inline-block;
+    animation: pulseAnim 1.5s infinite alternate;
+}
+
+@keyframes pulseAnim {
+    0% { transform: scale(1); color: #fff; }
+    50% { transform: scale(1.2); color: #ffdde1; }
+    100% { transform: scale(1); color: #fff; }
+}
